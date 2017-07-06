@@ -17,6 +17,7 @@
 #define __UNIQUE_ID(prefix) __PASTE(__PASTE(__UNIQUE_ID_, prefix), __COUNTER__)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_LTO_CLANG
 #ifdef CONFIG_FTRACE_MCOUNT_RECORD
 #define __norecordmcount \
@@ -43,6 +44,8 @@
 #define inline inline __attribute__((unused)) notrace
 >>>>>>> f276b50c3a5b (compiler, clang: properly override 'inline' for clang)
 
+=======
+>>>>>>> 29524a9d42f6 (compiler, clang: always inline when CONFIG_OPTIMIZE_INLINING is disabled)
 /* Clang doesn't have a way to turn it off per-function, yet. */
 #ifdef __noretpoline
 #undef __noretpoline
