@@ -261,6 +261,7 @@ lr	.req	x30		// link register
 
 	/*
 	 * @dst: Result of per_cpu(sym, smp_processor_id())
+<<<<<<< HEAD
 	 * @sym: The name of the per-cpu variable
 	 * @tmp: scratch register
 	 */
@@ -275,6 +276,22 @@ lr	.req	x30		// link register
 	 * @sym: The name of the per-cpu variable
 	 * @tmp: scratch register
 	 */
+=======
+	 * @sym: The name of the per-cpu variable
+	 * @tmp: scratch register
+	 */
+	.macro adr_this_cpu, dst, sym, tmp
+	adr_l	\dst, \sym
+	mrs	\tmp, tpidr_el1
+	add	\dst, \dst, \tmp
+	.endm
+
+	/*
+	 * @dst: Result of READ_ONCE(per_cpu(sym, smp_processor_id()))
+	 * @sym: The name of the per-cpu variable
+	 * @tmp: scratch register
+	 */
+>>>>>>> c488ae439ded (arm64: assembler: introduce ldr_this_cpu)
 	.macro ldr_this_cpu dst, sym, tmp
 	adr_l	\dst, \sym
 	mrs	\tmp, tpidr_el1
