@@ -372,8 +372,7 @@ Description:	Information about CPU vulnerabilities
 <<<<<<< HEAD
 =======
 
-		Details about the l1tf file can be found in
-		Documentation/hw-vuln/l1tf.rst
+		See also: Documentation/hw-vuln/index.rst
 
 What:		/sys/devices/system/cpu/smt
 		/sys/devices/system/cpu/smt/active
